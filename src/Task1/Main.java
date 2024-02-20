@@ -6,8 +6,8 @@ public class Main {
         Integer[] integers = {1, 2, 3, 4, 5};
         String[] strings = {"Hello", "World", "Bye"};
 
-        Array.printArray(integers, strings);
-
+        Array.printArray(integers);
+        Array.printArray(strings);
 
     }
 }
