@@ -2,38 +2,37 @@ package Task2;
 
 import Task2.Interfaces.Medis;
 import Task2.Medziai.Berzas;
-import Task2.Medziai.Lapuotis;
 import Task2.Medziai.Spygliuotis;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Miskas {
 
-    public static <T> void ivairusMiskas(ArrayList<T> sarasas){
+    public static void ivairusMiskas(ArrayList<? extends Medis> sarasas){
         System.out.println("Ivairus miskas:");
-        for (Object o : sarasas) {
-            if (o instanceof Medis){
-                ((Medis) o).turi();
+        for (Medis m : sarasas) {
+            if (m instanceof Medis medis){
+                medis.turi();
             }
         }
-
     }
-    public static <T extends Spygliuotis> void spygliuociuMiskas(ArrayList<T> sarasas){
+
+    public static void spygliuociuMiskas(ArrayList<? extends Spygliuotis> sarasas){
         System.out.println("Spygliuociu miskas:");
-        for (Object o : sarasas) {
-            if (o instanceof Medis){
-                ((Medis) o).turi();
+        for (Spygliuotis s : sarasas) {
+            if (s instanceof Medis medis){
+                medis.turi();
             }
         }
+    }
 
-    }
-    public static <T extends Berzas> void berzuMiskas(ArrayList<T> sarasas){
+    public static void berzuMiskas(ArrayList<? extends Berzas> sarasas){
         System.out.println("Berzu miskas:");
-        for (Object o : sarasas) {
-            if (o instanceof Medis){
-                ((Medis) o).turi();
+        for (Berzas b : sarasas) {
+            if (b instanceof Medis medis){
+                medis.turi();
             }
         }
     }
+
 }

@@ -30,7 +30,4 @@ public class Main {
         System.out.println();
         Miskas.berzuMiskas(berzai);
     }
-
-
-
 }
