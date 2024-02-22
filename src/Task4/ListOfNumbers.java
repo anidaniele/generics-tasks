@@ -20,22 +20,21 @@ public class ListOfNumbers {
         Double sum = 0d;
         for (Double number : this.doubleArrayList) {
             sum += number;
-
         }
-        return sum / doubleArrayList.size();
+        if (!doubleArrayList.isEmpty()) {
+            return sum / doubleArrayList.size();
+        }
+        return null;
     }
-
 
     public double calculateAverage() {
         if (doubleArrayList == null || doubleArrayList.isEmpty()) {
             throw new IllegalStateException("ArrayList is null or empty");
         }
-
         double sum = 0;
         for (Double num : doubleArrayList) {
             sum += num;
         }
-
         return sum / doubleArrayList.size();
     }
 
