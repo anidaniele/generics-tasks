@@ -2,18 +2,18 @@ package Task3;
 
 import java.util.ArrayList;
 
-public class Mapas {
+public class Mapas<K, V> {
 
-    private ArrayList<Pora> sarasasPoru = new ArrayList<>();
+    private ArrayList<Pora<K,V>> sarasasPoru = new ArrayList<>();
 
-    public <T> void ideti(T raktas, T reiksme) {
+    public void ideti(K raktas, V reiksme) {
         this.sarasasPoru.add(new Pora<>(raktas, reiksme));
     }
 
-    public <T> T gauti(T raktas){
-        for (Pora pora : this.sarasasPoru) {
-            if (pora.equals(raktas)){
-                return (T) pora.getReiksme();
+    public V gauti(K raktas){
+        for (Pora<K,V> pora : this.sarasasPoru) {
+            if (pora.getRaktas().equals(raktas)){
+                return pora.getReiksme();
             }
         }
         return null;
